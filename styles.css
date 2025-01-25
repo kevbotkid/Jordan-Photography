@@ -25,18 +25,18 @@ header {
 }
 
 nav {
-    padding: 10px 0;
-    background-color: #fff; /* White background for the menu */
+    padding: 0; /* No padding needed for the nav itself */
 }
 
 nav ul {
     display: flex;
     justify-content: center;
     list-style-type: none;
+    padding-left: 0; /* Ensure no padding around the list */
 }
 
 nav ul li {
-    margin-right: 20px;
+    margin-right: 20px; /* Spacing between links */
 }
 
 nav ul li:last-child {
@@ -47,8 +47,8 @@ nav a {
     text-decoration: none;
     color: black; /* Black font color for links */
     font-size: 18px;
-    font-weight: bold;
-    padding: 10px;
+    font-weight: normal; /* Reset bold to normal font weight */
+    padding: 15px 20px; /* Ensure proper padding around links */
 }
 
 nav a:hover {
