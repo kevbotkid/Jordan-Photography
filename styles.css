@@ -24,10 +24,10 @@ header {
 nav .nav-title {
     position: absolute; /* Make title position absolute */
     left: 0; /* Align title to the left */
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 16px; /* Match font size with menu items */
+    font-weight: normal; /* Match weight with menu items */
     color: #000;
-    text-transform: uppercase;
+    text-transform: uppercase; /* Uppercase text like the links */
 }
 
 /* Navigation Menu (centered) */
