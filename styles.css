@@ -1,112 +1,88 @@
-/* General Reset */
+/* Reset some basic styles for consistency across browsers */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body */
+/* Body settings */
 body {
     font-family: Helvetica, sans-serif;
-    background-color: #fff; /* White background */
-    color: #000; /* Black text */
-    padding-top: 80px; /* Added padding to avoid overlap with fixed navbar */
+    background-color: #fff;
+    color: #000;
 }
 
-/* Header and Navigation */
+/* Navigation Bar */
 header {
-    background-color: #fff; /* White background for the top bar */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000; /* Ensure the nav is always on top */
-    border-bottom: 1px solid #ccc; /* Optional: Add a subtle border to the bottom of the navbar */
-    height: 80px; /* Increased height for better spacing */
-}
-
-nav {
-    display: flex;
-    justify-content: center; /* Centering nav links horizontally */
-    align-items: center; /* Centering nav links vertically */
-    height: 100%; /* Ensure the navigation bar takes full height */
-    padding: 0; /* No padding inside the nav */
+    background-color: #fff;
+    padding: 20px 0;
+    border-bottom: 2px solid #000;
 }
 
 nav ul {
     display: flex;
     justify-content: center;
     list-style-type: none;
-    padding-left: 0; /* Remove padding around the list */
-    margin: 0; /* Remove margin */
 }
 
 nav ul li {
-    margin-right: 20px; /* Spacing between links */
+    margin: 0 15px;
 }
 
-nav ul li:last-child {
-    margin-right: 0;
-}
-
-nav a {
+nav ul li a {
     text-decoration: none;
-    color: black; /* Black font color for links */
-    font-size: 18px;
-    font-weight: normal; /* Reset bold to normal font weight */
-    padding: 10px 20px; /* Padding around each link */
-    display: inline-block; /* Ensure the link is treated as a block-level element for proper padding */
-    height: 100%; /* Ensure the link takes up full height of the navbar */
-    line-height: 60px; /* Adjust line-height to center text vertically */
+    color: #000;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 16px;
 }
 
-nav a:hover {
-    color: #888; /* Light gray hover color */
+nav ul li a:hover {
+    color: #555;
 }
 
-/* Ensure content is below the fixed navigation */
-main {
-    padding-top: 80px; /* Adjusted padding to clear the navbar */
-    font-family: Helvetica, sans-serif;
-    line-height: 1.6;
+/* Image container (side by side images with scroll effect) */
+.image-container {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    gap: 20px; /* Add space between the images */
+    margin-top: 40px; /* Space between the heading and the images */
+    padding-bottom: 20px; /* Optional: space below the images */
+    justify-content: center; /* Center the images in the container */
 }
 
-/* Styling for headings */
-h1, h2, h3 {
-    font-weight: bold;
-    margin-bottom: 20px;
+.photo {
+    width: 100%; /* Each image takes up 100% of its container's width */
+    max-width: 600px; /* Max width for each image */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 8px; /* Optional: rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow effect */
 }
 
-h1 {
-    font-size: 3em;
+/* Add custom scrollbar style for webkit browsers (like Chrome) */
+.image-container::-webkit-scrollbar {
+    height: 8px; /* Vertical scrollbar height */
 }
 
-h2 {
-    font-size: 2em;
+.image-container::-webkit-scrollbar-thumb {
+    background: #888; /* Color of the scrollbar thumb */
+    border-radius: 10px;
 }
 
-h3 {
-    font-size: 1.5em;
+.image-container::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Hover color for scrollbar thumb */
 }
 
-/* Styling for text content */
-.text-content {
-    margin: 20px;
-}
-
-/* Footer (Optional if you want to add one) */
-footer {
-    text-align: center;
-    margin-top: 40px;
-    padding: 20px;
-    background-color: #333;
-    color: #fff;
-}
-
-/* Media Queries for Responsiveness */
+/* Responsive design for smaller screens */
 @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
+    .image-container {
+        flex-direction: column; /* Stack images vertically on small screens */
         align-items: center;
+        overflow-x: visible; /* Disable scrolling on very small screens */
+    }
+
+    .photo {
+        width: 80%; /* Make images smaller on mobile */
+        margin-bottom: 20px; /* Space between images on mobile */
     }
 }
