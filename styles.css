@@ -21,7 +21,7 @@ header {
     width: 100%;
     z-index: 1000; /* Ensure the nav is always on top */
     border-bottom: 1px solid #ccc; /* Optional: Add a subtle border to the bottom of the navbar */
-    height: 60px; /* Fixed height for the navigation bar */
+    height: 80px; /* Increased height for better spacing */
 }
 
 nav {
@@ -50,5 +50,65 @@ nav ul li:last-child {
 
 nav a {
     text-decoration: none;
-    color: black; /* Black fon
+    color: black; /* Black font color for links */
+    font-size: 18px;
+    font-weight: normal; /* Reset bold to normal font weight */
+    padding: 10px 20px; /* Padding around each link */
+    display: inline-block; /* Ensure the link is treated as a block-level element for proper padding */
+    line-height: 1.5; /* Ensure the text is centered vertically */
+    height: 100%; /* Ensure the link takes up full height of the navbar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+nav a:hover {
+    color: #888; /* Light gray hover color */
+}
+
+/* Ensure content is below the fixed navigation */
+main {
+    padding-top: 100px; /* Padding-top to clear the navbar */
+    font-family: Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+/* Styling for headings */
+h1, h2, h3 {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+/* Styling for text content */
+.text-content {
+    margin: 20px;
+}
+
+/* Footer (Optional if you want to add one) */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
