@@ -10,6 +10,7 @@ body {
     font-family: Helvetica, sans-serif;
     background-color: #fff; /* White background */
     color: #000; /* Black text */
+    padding-top: 80px; /* Added padding to avoid overlap with fixed navbar */
 }
 
 /* Header and Navigation */
@@ -65,7 +66,7 @@ nav a:hover {
 
 /* Ensure content is below the fixed navigation */
 main {
-    padding-top: 100px; /* Padding-top to clear the navbar */
+    padding-top: 80px; /* Adjusted padding to clear the navbar */
     font-family: Helvetica, sans-serif;
     line-height: 1.6;
 }
