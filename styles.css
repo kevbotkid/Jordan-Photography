@@ -55,11 +55,8 @@ nav a {
     font-weight: normal; /* Reset bold to normal font weight */
     padding: 10px 20px; /* Padding around each link */
     display: inline-block; /* Ensure the link is treated as a block-level element for proper padding */
-    line-height: 1.5; /* Ensure the text is centered vertically */
     height: 100%; /* Ensure the link takes up full height of the navbar */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    line-height: 60px; /* Adjust line-height to center text vertically */
 }
 
 nav a:hover {
