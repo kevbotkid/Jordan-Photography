@@ -21,6 +21,7 @@ header {
     width: 100%;
     z-index: 1000; /* Ensure the nav is always on top */
     border-bottom: 1px solid #ccc; /* Optional: Add a subtle border to the bottom of the navbar */
+    height: 60px; /* Fixed height for the navigation bar */
 }
 
 nav {
@@ -56,7 +57,7 @@ nav a:hover {
 
 /* Ensure content is below the fixed navigation */
 main {
-    padding-top: 120px; /* Adjust this value to create space under the fixed nav */
+    padding-top: 80px; /* Increased padding-top to clear the navbar */
     font-family: Helvetica, sans-serif;
     line-height: 1.6;
 }
@@ -101,6 +102,3 @@ footer {
     }
 }
 
-footer a:hover {
-    color: #f4b400;
-}
