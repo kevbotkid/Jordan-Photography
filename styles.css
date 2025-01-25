@@ -1,112 +1,104 @@
-/* CSS for Photography Website */
-
-/* Basic Reset */
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body Styles */
+/* Body */
 body {
-    font-family: 'Helvetica', sans-serif; /* Helvetica for modern look */
-    background-color: #ffffff; /* White background */
-    color: #000000; /* Black text */
-    line-height: 1.6;
+    font-family: Helvetica, sans-serif;
+    background-color: #fff; /* White background */
+    color: #000; /* Black text */
 }
 
-/* Header and Horizontal Menu */
+/* Header and Navigation */
 header {
-    background-color: #ffffff; /* White horizontal banner */
-    color: #000000; /* Black text */
-    padding: 15px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background-color: #fff; /* White background for the top bar */
     position: fixed;
-    width: 100%;
     top: 0;
     left: 0;
-    z-index: 1000;
+    width: 100%;
+    z-index: 1000; /* Ensure the nav is always on top */
+    border-bottom: 1px solid #ccc; /* Optional: Add a subtle border to the bottom of the navbar */
+}
+
+nav {
+    padding: 10px 0;
+    background-color: #fff; /* White background for the menu */
 }
 
 nav ul {
-    list-style: none;
     display: flex;
     justify-content: center;
-    gap: 30px;
-    padding: 0;
+    list-style-type: none;
 }
 
 nav ul li {
-    display: inline-block;
+    margin-right: 20px;
 }
 
-nav ul li a {
-    color: #000000;
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav a {
     text-decoration: none;
+    color: black; /* Black font color for links */
     font-size: 18px;
-    text-transform: uppercase;
-    padding: 12px 16px;
+    font-weight: bold;
+    padding: 10px;
 }
 
-nav ul li a:hover {
-    background-color: #f4b400; /* Golden highlight on hover */
-    border-radius: 5px;
+nav a:hover {
+    color: #888; /* Light gray hover color */
 }
 
-/* Main Content Area */
+/* Ensure content is below the fixed navigation */
 main {
-    padding: 120px 20px 40px; /* Added space for fixed header */
+    padding-top: 120px; /* Adjust this value to create space under the fixed nav */
+    font-family: Helvetica, sans-serif;
+    line-height: 1.6;
 }
 
-/* Gallery Section */
-.gallery {
-    display: flex;
-    overflow-x: auto; /* Horizontal scrolling */
-    gap: 20px;
-    padding: 20px 0;
-}
-
-.gallery img {
-    width: 80vw; /* Large images */
-    height: auto;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.gallery img:hover {
-    transform: scale(1.05); /* Slight zoom effect */
-}
-
-/* About Page */
-.about {
-    padding: 40px;
-}
-
-.about h2 {
-    font-family: 'Helvetica', sans-serif;
-    font-size: 28px;
+/* Styling for headings */
+h1, h2, h3 {
+    font-weight: bold;
     margin-bottom: 20px;
 }
 
-.about p {
-    font-size: 18px;
-    color: #555555;
+h1 {
+    font-size: 3em;
 }
 
-/* Footer Styles */
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+/* Styling for text content */
+.text-content {
+    margin: 20px;
+}
+
+/* Footer (Optional if you want to add one) */
 footer {
-    background-color: #333333;
-    color: #ffffff;
     text-align: center;
+    margin-top: 40px;
     padding: 20px;
+    background-color: #333;
+    color: #fff;
 }
 
-footer a {
-    color: #ffffff;
-    text-decoration: none;
-    margin: 0 10px;
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 footer a:hover {
