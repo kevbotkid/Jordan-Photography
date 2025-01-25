@@ -14,17 +14,29 @@ header {
     padding: 20px 0;
     border-bottom: 2px solid #000;
     display: flex;
-    justify-content: space-between; /* Space out title and menu */
-    align-items: center; /* Vertically align items */
-    padding: 20px 40px; /* Added left and right padding for spacing */
+    justify-content: center; /* Center all the content in the navbar */
+    align-items: center; /* Vertically center the navbar items */
+    padding: 20px 40px; /* Add padding for spacing */
+    position: relative; /* To position the title */
 }
 
+/* Title on the far left */
+nav .nav-title {
+    position: absolute; /* Make title position absolute */
+    left: 0; /* Align title to the left */
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    text-transform: uppercase;
+}
+
+/* Navigation Menu (centered) */
 nav ul {
     display: flex;
-    justify-content: center;
     list-style-type: none;
     margin: 0;
     padding: 0;
+    justify-content: center; /* Center the links in the middle */
 }
 
 nav ul li {
@@ -41,15 +53,6 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #555;
-}
-
-/* Title Style */
-.nav-title a {
-    text-decoration: none;
-    font-size: 24px;
-    font-weight: bold;
-    color: #000;
-    text-transform: uppercase;
 }
 
 /* Full-screen image container */
