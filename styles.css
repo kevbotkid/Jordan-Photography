@@ -13,12 +13,18 @@ header {
     background-color: #fff;
     padding: 20px 0;
     border-bottom: 2px solid #000;
+    display: flex;
+    justify-content: space-between; /* Space out title and menu */
+    align-items: center; /* Vertically align items */
+    padding: 20px 40px; /* Added left and right padding for spacing */
 }
 
 nav ul {
     display: flex;
     justify-content: center;
     list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
@@ -35,6 +41,15 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #555;
+}
+
+/* Title Style */
+.nav-title a {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    text-transform: uppercase;
 }
 
 /* Full-screen image container */
@@ -66,4 +81,3 @@ nav ul li a:hover {
 .image-container::-webkit-scrollbar-thumb:hover {
     background: #555; /* Hover color for scrollbar thumb */
 }
-
