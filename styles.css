@@ -1,15 +1,11 @@
-/* Reset some basic styles for consistency across browsers */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 /* Body settings */
 body {
     font-family: Helvetica, sans-serif;
     background-color: #fff;
     color: #000;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll on body */
 }
 
 /* Navigation Bar */
@@ -41,27 +37,25 @@ nav ul li a:hover {
     color: #555;
 }
 
-/* Image container (side by side images with scroll effect) */
+/* Full-screen image container */
 .image-container {
     display: flex;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
     overflow-x: auto; /* Enable horizontal scrolling */
-    gap: 20px; /* Add space between the images */
-    margin-top: 40px; /* Space between the heading and the images */
-    padding-bottom: 20px; /* Optional: space below the images */
-    justify-content: center; /* Center the images in the container */
+    justify-content: flex-start;
 }
 
 .photo {
-    width: 100%; /* Each image takes up 100% of its container's width */
-    max-width: 600px; /* Max width for each image */
-    height: auto; /* Maintain the aspect ratio */
-    border-radius: 8px; /* Optional: rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow effect */
+    width: 100vw; /* Each image takes up full width of the viewport */
+    height: 100vh; /* Each image takes up full height of the viewport */
+    object-fit: cover; /* Ensure the image covers the entire space without distortion */
+    border: none; /* Remove any borders */
 }
 
 /* Add custom scrollbar style for webkit browsers (like Chrome) */
 .image-container::-webkit-scrollbar {
-    height: 8px; /* Vertical scrollbar height */
+    height: 8px; /* Horizontal scrollbar height */
 }
 
 .image-container::-webkit-scrollbar-thumb {
@@ -73,16 +67,3 @@ nav ul li a:hover {
     background: #555; /* Hover color for scrollbar thumb */
 }
 
-/* Responsive design for smaller screens */
-@media (max-width: 768px) {
-    .image-container {
-        flex-direction: column; /* Stack images vertically on small screens */
-        align-items: center;
-        overflow-x: visible; /* Disable scrolling on very small screens */
-    }
-
-    .photo {
-        width: 80%; /* Make images smaller on mobile */
-        margin-bottom: 20px; /* Space between images on mobile */
-    }
-}
