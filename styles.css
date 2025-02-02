@@ -16,18 +16,7 @@ header {
     display: flex;
     justify-content: center; /* Center all the content in the navbar */
     align-items: center; /* Vertically center the navbar items */
-    padding: 20px 40px; /* Add padding for spacing */
     position: relative; /* To position the title */
-}
-
-/* Title on the far left */
-nav .nav-title {
-    position: absolute; /* Make title position absolute */
-    left: 0; /* Align title to the left */
-    font-size: 16px; /* Match font size with menu items */
-    font-weight: normal; /* Match weight with menu items */
-    color: #000;
-    text-transform: uppercase; /* Uppercase text like the links */
 }
 
 /* Navigation Menu (centered) */
@@ -55,36 +44,6 @@ nav ul li a:hover {
     color: #555;
 }
 
-/* Full-screen image container */
-.image-container {
-    display: flex;
-    width: 100vw; /* Full viewport width */
-    height: 100vh; /* Full viewport height */
-    overflow-x: auto; /* Enable horizontal scrolling */
-    justify-content: flex-start;
-}
-
-.photo {
-    width: 100vw; /* Each image takes up full width of the viewport */
-    height: 100vh; /* Each image takes up full height of the viewport */
-    object-fit: cover; /* Ensure the image covers the entire space without distortion */
-    border: none; /* Remove any borders */
-}
-
-/* Add custom scrollbar style for webkit browsers (like Chrome) */
-.image-container::-webkit-scrollbar {
-    height: 8px; /* Horizontal scrollbar height */
-}
-
-.image-container::-webkit-scrollbar-thumb {
-    background: #888; /* Color of the scrollbar thumb */
-    border-radius: 10px;
-}
-
-.image-container::-webkit-scrollbar-thumb:hover {
-    background: #555; /* Hover color for scrollbar thumb */
-}
-
 /* About Page Layout */
 .about-container {
     display: flex;
@@ -95,9 +54,10 @@ nav ul li a:hover {
     margin: 20px; /* Add some space around the container */
 }
 
+/* Left Side: Image */
 .about-image {
     flex: 1;
-    max-width: 200px; /* Adjusted size */
+    max-width: 200px; /* Adjusted size for smaller image */
     display: flex;
     justify-content: center;
 }
@@ -109,6 +69,7 @@ nav ul li a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: for a subtle shadow effect */
 }
 
+/* Right Side: About Text */
 .about-text {
     flex: 2;
     max-width: 600px;
@@ -143,3 +104,4 @@ nav ul li a:hover {
         margin: 0 auto;
     }
 }
+
