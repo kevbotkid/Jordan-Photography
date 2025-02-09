@@ -5,31 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jordan Gran Photography</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="timer.js" defer></script> <!-- Ensure the JS for the timer is linked -->
 </head>
 <body>
     <!-- Navigation Bar -->
     <header>
         <nav>
-            <div class="nav-title">
-                Jordan Gran Photography
-            </div>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="collection.html">Collection</a></li>
+                <li><a href="contact.html">Contact</a></li>
                 <li><a href="store.html">Store</a></li>
-                <li><a href="appointment.html">Book an Appointment</a></li>
+                <li><a href="book-appointment.html">Book an Appointment</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Timer Section -->
-    <div id="timer">
-        <p>Time left until the website opens: <span id="countdown"></span></p>
+    <div class="timer-container">
+        <div id="timer"></div> <!-- Timer Display -->
     </div>
 
-    <!-- Image Container (Side Scrolling) -->
+    <!-- Full-screen Image container for homepage -->
     <main>
         <div class="image-container">
             <img src="images/IMAGE1.jpg" alt="Photography 1" class="photo">
@@ -37,10 +36,40 @@
         </div>
     </main>
 
+    <!-- Footer -->
     <footer>
         <p>© 2025 Jordan Gran Photography</p>
     </footer>
 
-    <script src="timer.js"></script>
+    <script>
+        // Set the date we're counting down to
+        const countdownDate = new Date("Feb 28, 2025 00:00:00").getTime();
+
+        // Update the countdown every 1 second
+        const x = setInterval(function() {
+
+            // Get the current date and time
+            const now = new Date().getTime();
+
+            // Find the distance between now and the countdown date
+            const distance = countdownDate - now;
+
+            // Time calculations for days, hours, minutes, and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the element with id="timer"
+            document.getElementById("timer").innerHTML = days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+
+            // If the countdown is over, display a message
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("timer").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
