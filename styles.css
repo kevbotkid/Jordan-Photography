@@ -6,6 +6,7 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden; /* Prevent horizontal scroll on body */
+    height: 100vh; /* Ensure body takes up full viewport height */
 }
 
 /* Navigation Bar */
@@ -63,14 +64,14 @@ nav ul li a:hover {
     color: #000;
 }
 
-/* Full-screen image container */
+/* Full-screen image container for homepage */
 .image-container {
     display: flex;
     width: 100vw; /* Full viewport width */
-    height: 60vh; /* Adjust height of images */
+    height: calc(100vh - 100px); /* Adjust height of images (fill the rest of the page) */
     overflow-x: auto; /* Enable horizontal scrolling */
     justify-content: flex-start;
-    margin-top: 20px;
+    margin-top: 20px; /* Space between countdown and images */
 }
 
 .photo {
@@ -97,7 +98,7 @@ nav ul li a:hover {
 /* Make sure the layout works well on smaller screens */
 @media (max-width: 768px) {
     .image-container {
-        height: 40vh; /* Adjust image container height for smaller screens */
+        height: calc(80vh - 100px); /* Adjust image container height for smaller screens */
     }
 
     #countdown-container {
