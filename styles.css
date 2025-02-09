@@ -55,11 +55,21 @@ nav ul li a:hover {
     color: #555;
 }
 
-/* Timer Container */
-#timer {
+/* Countdown Timer */
+#timer-container {
     text-align: center;
-    font-size: 2rem;
-    margin-top: 20px;
+    margin: 20px 0; /* Add some space above and below the timer */
+}
+
+#countdown-message {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#timer {
+    font-size: 36px;
+    font-weight: bold;
+    color: #007bff;
 }
 
 /* Full-screen image container */
@@ -90,67 +100,5 @@ nav ul li a:hover {
 
 .image-container::-webkit-scrollbar-thumb:hover {
     background: #555; /* Hover color for scrollbar thumb */
-}
-
-/* About Page Layout */
-.about-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    margin: 20px; /* Add some space around the container */
-}
-
-/* About Page Image */
-.about-image {
-    flex: 1;
-    max-width: 400px; /* Adjust the image size */
-    display: flex;
-    justify-content: center;
-}
-
-.about-image img {
-    width: 100%; /* Ensures image takes up the full container width */
-    height: auto; /* Keeps the image's aspect ratio intact */
-    max-width: 400px; /* Limits the image size */
-    margin: 0 auto; /* Centers the image */
-    display: block;
-}
-
-/* About Page Text */
-.about-text {
-    flex: 2;
-    max-width: 600px;
-}
-
-.about-text h1 {
-    font-size: 2rem;
-    color: black;
-    margin-bottom: 20px;
-}
-
-.about-text p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-/* Make sure the layout works well on smaller screens */
-@media (max-width: 768px) {
-    .about-container {
-        flex-direction: column;
-    }
-
-    .about-image,
-    .about-text {
-        flex: 1 100%;
-        max-width: 100%;
-    }
-
-    .about-image img {
-        width: 60%; /* Adjusted for smaller screens */
-        margin: 0 auto;
-    }
 }
 
