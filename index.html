@@ -7,17 +7,15 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Navigation Bar -->
     <header>
         <nav>
-            <!-- Title (no hyperlink) -->
             <div class="nav-title">
                 Jordan Gran Photography
             </div>
-
-            <!-- Navigation menu -->
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="aboutme.html">About Me</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="store.html">Store</a></li>
@@ -26,50 +24,23 @@
         </nav>
     </header>
 
-    <!-- Countdown Timer (above images) -->
-    <div id="countdown-container">
-        <p>Site Opening In:</p>
-        <div id="countdown"></div>
+    <!-- Timer Section -->
+    <div id="timer">
+        <p>Time left until the website opens: <span id="countdown"></span></p>
     </div>
 
+    <!-- Image Container (Side Scrolling) -->
     <main>
-        <!-- Full-screen image container for homepage -->
         <div class="image-container">
             <img src="images/IMAGE1.jpg" alt="Photography 1" class="photo">
             <img src="images/IMAGE2.jpeg" alt="Photography 2" class="photo">
         </div>
     </main>
 
-    <script>
-        // Set the date we're counting down to (February 28, 2025)
-        const countdownDate = new Date("Feb 28, 2025 00:00:00").getTime();
+    <footer>
+        <p>© 2025 Jordan Gran Photography</p>
+    </footer>
 
-        // Update the countdown every 1 second
-        const countdownFunction = setInterval(function() {
-
-            // Get the current date and time
-            const now = new Date().getTime();
-
-            // Find the time difference between now and the countdown date
-            const distance = countdownDate - now;
-
-            // Time calculations for days, hours, minutes, and seconds
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            // Display the result in the "countdown" element
-            document.getElementById("countdown").innerHTML = days + "d " + hours + "h " +
-                minutes + "m " + seconds + "s ";
-
-            // If the countdown is finished, display a message
-            if (distance < 0) {
-                clearInterval(countdownFunction);
-                document.getElementById("countdown").innerHTML = "The site is now open!";
-            }
-        }, 1000);
-    </script>
+    <script src="timer.js"></script>
 </body>
 </html>
-
