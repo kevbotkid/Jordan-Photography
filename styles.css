@@ -55,7 +55,53 @@ nav ul li a:hover {
     color: #555;
 }
 
+/* Countdown Timer */
+#countdown-container {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1.5rem;
+    color: #000;
+}
+
 /* Full-screen image container */
 .image-container {
     display: flex;
-    width: 100vw; /* Full viewport wid
+    width: 100vw; /* Full viewport width */
+    height: 60vh; /* Adjust height of images */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.photo {
+    width: 100vw; /* Each image takes up full width of the viewport */
+    height: 100%; /* Ensure images take full container height */
+    object-fit: cover; /* Ensure the image covers the entire space without distortion */
+    border: none; /* Remove any borders */
+}
+
+/* Add custom scrollbar style for webkit browsers (like Chrome) */
+.image-container::-webkit-scrollbar {
+    height: 8px; /* Horizontal scrollbar height */
+}
+
+.image-container::-webkit-scrollbar-thumb {
+    background: #888; /* Color of the scrollbar thumb */
+    border-radius: 10px;
+}
+
+.image-container::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Hover color for scrollbar thumb */
+}
+
+/* Make sure the layout works well on smaller screens */
+@media (max-width: 768px) {
+    .image-container {
+        height: 40vh; /* Adjust image container height for smaller screens */
+    }
+
+    #countdown-container {
+        font-size: 1.2rem; /* Adjust font size for countdown on smaller screens */
+    }
+}
+
