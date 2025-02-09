@@ -55,50 +55,61 @@ nav ul li a:hover {
     color: #555;
 }
 
-/* Countdown Timer */
-#timer-container {
-    text-align: center;
-    margin: 20px 0; /* Add some space above and below the timer */
-}
-
-#countdown-message {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-#timer {
-    font-size: 36px;
-    font-weight: bold;
-    color: #007bff;
-}
-
-/* Full-screen image container */
-.image-container {
+/* About Page Layout */
+.about-container {
     display: flex;
-    width: 100vw; /* Full viewport width */
-    height: 100vh; /* Full viewport height */
-    overflow-x: auto; /* Enable horizontal scrolling */
-    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px; /* Add some space around the container */
 }
 
-.photo {
-    width: 100vw; /* Each image takes up full width of the viewport */
-    height: 100vh; /* Each image takes up full height of the viewport */
-    object-fit: cover; /* Ensure the image covers the entire space without distortion */
-    border: none; /* Remove any borders */
+.about-image {
+    flex: 1;
+    max-width: 200px; /* Adjusted size */
+    display: flex;
+    justify-content: center;
 }
 
-/* Add custom scrollbar style for webkit browsers (like Chrome) */
-.image-container::-webkit-scrollbar {
-    height: 8px; /* Horizontal scrollbar height */
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Optional: for rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: for a subtle shadow effect */
 }
 
-.image-container::-webkit-scrollbar-thumb {
-    background: #888; /* Color of the scrollbar thumb */
-    border-radius: 10px;
+.about-text {
+    flex: 2;
+    max-width: 600px;
 }
 
-.image-container::-webkit-scrollbar-thumb:hover {
-    background: #555; /* Hover color for scrollbar thumb */
+.about-text h1 {
+    font-size: 2rem;
+    color: black;
+    margin-bottom: 20px;
 }
 
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Make sure the layout works well on smaller screens */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+    }
+
+    .about-image,
+    .about-text {
+        flex: 1 100%;
+        max-width: 100%;
+    }
+
+    .about-image img {
+        width: 60%; /* Adjusted for smaller screens */
+        margin: 0 auto;
+    }
+}
