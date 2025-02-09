@@ -56,10 +56,12 @@ nav ul li a:hover {
 }
 
 /* Timer Section */
-#timer {
+.timer-container {
     text-align: center;
-    font-size: 1.5rem;
     margin-top: 20px;
+    font-size: 2rem;
+    color: #000;
+    font-weight: bold;
 }
 
 /* Full-screen image container */
@@ -92,10 +94,62 @@ nav ul li a:hover {
     background: #555; /* Hover color for scrollbar thumb */
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    margin-top: 30px;
-    padding: 20px;
+/* About Page Layout */
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px; /* Add some space around the container */
+}
+
+.about-image {
+    flex: 1;
+    max-width: 200px; /* Adjusted size */
+    display: flex;
+    justify-content: center;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Optional: for rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: for a subtle shadow effect */
+}
+
+.about-text {
+    flex: 2;
+    max-width: 600px;
+}
+
+.about-text h1 {
+    font-size: 2rem;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Make sure the layout works well on smaller screens */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+    }
+
+    .about-image,
+    .about-text {
+        flex: 1 100%;
+        max-width: 100%;
+    }
+
+    .about-image img {
+        width: 60%; /* Adjusted for smaller screens */
+        margin: 0 auto;
+    }
 }
 
