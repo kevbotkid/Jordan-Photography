@@ -14,29 +14,18 @@ header {
     padding: 20px 0;
     border-bottom: 2px solid #000;
     display: flex;
-    justify-content: center; /* Center all the content in the navbar */
-    align-items: center; /* Vertically center the navbar items */
-    padding: 20px 40px; /* Add padding for spacing */
-    position: relative; /* To position the title */
+    justify-content: center;
+    align-items: center;
+    padding: 20px 40px;
+    position: relative;
 }
 
-/* Title on the far left */
-nav .nav-title {
-    position: absolute; /* Make title position absolute */
-    left: 0; /* Align title to the left */
-    font-size: 16px; /* Match font size with menu items */
-    font-weight: normal; /* Match weight with menu items */
-    color: #000;
-    text-transform: uppercase; /* Uppercase text like the links */
-}
-
-/* Navigation Menu (centered) */
 nav ul {
     display: flex;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    justify-content: center; /* Center the links in the middle */
+    justify-content: center;
 }
 
 nav ul li {
@@ -55,6 +44,29 @@ nav ul li a:hover {
     color: #555;
 }
 
+/* Timer */
+#timer-container {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+
+/* Full-screen image container */
+.image-container {
+    display: flex;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    justify-content: flex-start;
+}
+
+.photo {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    border: none;
+}
+
 /* About Page Layout */
 .about-container {
     display: flex;
@@ -62,12 +74,12 @@ nav ul li a:hover {
     align-items: center;
     justify-content: center;
     gap: 30px;
-    margin: 20px; /* Add some space around the container */
+    margin: 20px;
 }
 
 .about-image {
     flex: 1;
-    max-width: 200px; /* Adjusted size */
+    max-width: 200px;
     display: flex;
     justify-content: center;
 }
@@ -75,8 +87,8 @@ nav ul li a:hover {
 .about-image img {
     width: 100%;
     height: auto;
-    border-radius: 10px; /* Optional: for rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: for a subtle shadow effect */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .about-text {
@@ -96,7 +108,6 @@ nav ul li a:hover {
     margin-bottom: 15px;
 }
 
-/* Make sure the layout works well on smaller screens */
 @media (max-width: 768px) {
     .about-container {
         flex-direction: column;
@@ -109,7 +120,8 @@ nav ul li a:hover {
     }
 
     .about-image img {
-        width: 60%; /* Adjusted for smaller screens */
+        width: 60%;
         margin: 0 auto;
     }
 }
+
