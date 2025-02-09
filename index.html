@@ -33,5 +33,20 @@
             <img src="images/IMAGE2.jpeg" alt="Photography 2" class="photo">
         </div>
     </main>
+
+    <!-- Wave sound when the page loads -->
+    <audio id="wave-sound" preload="auto">
+        <source src="beach.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // JavaScript to play wave sound on page load
+        window.onload = function() {
+            var waveSound = document.getElementById('wave-sound');
+            waveSound.loop = true; // This will make the sound loop indefinitely
+            waveSound.play(); // This starts the sound automatically
+        }
+    </script>
 </body>
 </html>
