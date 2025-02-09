@@ -6,6 +6,68 @@
     <title>Gallery - Jordan Gran Photography</title>
 
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Slideshow styles */
+        .slideshow-container {
+            position: relative;
+            max-width: 800px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .slides {
+            display: none;
+            width: 100%;
+        }
+
+        .slideshow-container img {
+            width: 100%;
+            height: auto;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .dots {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .active {
+            background-color: #717171;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -22,6 +84,67 @@
     </header>
 
     <h1>Gallery</h1>
-    <p>Image, Image, Image (need to locate images)</p>
+
+    <div class="slideshow-container">
+        <img class="slides" src="image10.jpeg" alt="Image 1">
+        <img class="slides" src="image11.jpeg" alt="Image 2">
+        <img class="slides" src="image12.jpeg" alt="Image 3">
+
+        <button class="prev">❮</button>
+        <button class="next">❯</button>
+    </div>
+
+    <div class="dots">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+    <script>
+        // JavaScript for the slideshow
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slides');
+        const dots = document.querySelectorAll('.dot');
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+
+        // Function to show a specific slide
+        function showSlide(index) {
+            if (index >= slides.length) slideIndex = 0;
+            if (index < 0) slideIndex = slides.length - 1;
+
+            slides.forEach((slide, i) => {
+                slide.style.display = i === slideIndex ? 'block' : 'none';
+                dots[i].classList.toggle('active', i === slideIndex);
+            });
+        }
+
+        // Next/Previous controls
+        function changeSlide(step) {
+            showSlide(slideIndex += step);
+        }
+
+        // Dots controls
+        dots.forEach((dot, i) => {
+            dot.addEventListener('click', () => {
+                slideIndex = i;
+                showSlide(slideIndex);
+            });
+        });
+
+        // Auto slideshow
+        function autoSlideShow() {
+            changeSlide(1);
+            setTimeout(autoSlideShow, 5000); // Change image every 5 seconds
+        }
+
+        // Event listeners for buttons
+        prevButton.addEventListener('click', () => changeSlide(-1));
+        nextButton.addEventListener('click', () => changeSlide(1));
+
+        // Initialize slideshow
+        showSlide(slideIndex);
+        autoSlideShow();
+    </script>
 </body>
 </html>
