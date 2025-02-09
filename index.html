@@ -36,7 +36,7 @@
 
     <!-- Wave sound when the page loads -->
     <audio id="wave-sound" preload="auto">
-        <source src="beach.mp3" type="audio/mp3">
+        <source src="https://github.com/kevbotkid/Jordan-Photography/raw/refs/heads/main/beach.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
 
@@ -45,8 +45,11 @@
         window.onload = function() {
             var waveSound = document.getElementById('wave-sound');
             waveSound.loop = true; // This will make the sound loop indefinitely
-            waveSound.play(); // This starts the sound automatically
+            waveSound.play().catch(function(error) {
+                console.log("Error playing sound:", error);
+            }); // Added error handling
         }
     </script>
 </body>
 </html>
+
