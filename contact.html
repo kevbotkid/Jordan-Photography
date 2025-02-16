@@ -23,5 +23,34 @@
 
     <h1>Contact Me!</h1>
     <p>Email: huffmanjm@yahoo.com</p>
+
+    <section class="survey-form">
+        <h2>We Value Your Feedback</h2>
+        <p>Please take a moment to complete this short survey.</p>
+        <form action="submit_survey.php" method="post">
+            <label for="experience">How would you rate your experience on our website?</label>
+            <select id="experience" name="experience">
+                <option value="excellent">Excellent</option>
+                <option value="good">Good</option>
+                <option value="average">Average</option>
+                <option value="poor">Poor</option>
+            </select>
+
+            <label>Which types of photography interest you the most? (Check all that apply)</label>
+            <input type="checkbox" id="portrait" name="photography_type[]" value="Portrait">
+            <label for="portrait">Portrait</label>
+            <input type="checkbox" id="landscape" name="photography_type[]" value="Landscape">
+            <label for="landscape">Landscape</label>
+            <input type="checkbox" id="street" name="photography_type[]" value="Street">
+            <label for="street">Street</label>
+            <input type="checkbox" id="wildlife" name="photography_type[]" value="Wildlife">
+            <label for="wildlife">Wildlife</label>
+
+            <label for="comments">Additional Comments:</label>
+            <textarea id="comments" name="comments" rows="4"></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
 </body>
 </html>
