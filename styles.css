@@ -14,8 +14,9 @@ header {
     padding: 20px 40px;
     border-bottom: 2px solid #000;
     display: flex;
-    justify-content: space-between; /* Space out the logo and navigation */
+    justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 /* Logo (Site Title) */
@@ -88,4 +89,51 @@ nav ul li a:hover {
     margin: 20px;
 }
 
-.about-image
+.about-image {
+    flex: 1;
+    max-width: 200px; /* Ensure the image doesn't get too large */
+    display: flex;
+    justify-content: center;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    max-width: 200px; /* Max width to prevent image from getting too large */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+    flex: 2;
+    max-width: 600px;
+}
+
+.about-text h1 {
+    font-size: 2rem;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+    }
+
+    .about-image,
+    .about-text {
+        flex: 1 100%;
+        max-width: 100%;
+    }
+
+    .about-image img {
+        width: 60%;
+        margin: 0 auto;
+    }
+}
